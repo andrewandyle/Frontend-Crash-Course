@@ -1,2 +1,2 @@
 # HTML-Crash-Course
-Learning HTML through Traversy Media's crash course videos.
+Learning HTML, CSS, and JavaScript through Traversy Media's crash course videos.
