@@ -1,3 +1,242 @@
+/* h3 in this case is the selector
+This applies it to every occurrence of h3 though
+If you want to target a certain one, use a class or id
+
+{} for the declaration
+property : value (like a key-value pair)
+ex: a{background-color:yellow;}
+
 h3{
   color:green;
+}
+
+You can include an asterisk to apply to everything: */
+/* *{
+  margin:0;
+  padding:0;
+} */
+/* Above is known as a reset. */
+
+body{
+  background-color:#f4f4f4;
+  color:#555555;
+
+  /* put multiple fonts in case one won't load
+  Web-safe fonts, you don't have to import them
+  For specialty fonts, you have to bring it in and apply it */
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:16px;
+  font-weight:normal;
+  /* we can actually just use
+  font: normal 16px Arial, Helvetica, sans-serif */
+
+  line-height:1.6em;
+  margin:0;
+}
+
+/* colors can be: color names, HTML5 color names, hex, or rgb(r, g, b) */
+
+a{
+  /* gets rid of underline */
+  text-decoration:none;
+  color:#000;
+}
+
+/* links have different states, including when you hover over them */
+a:hover{
+  color:red;
+}
+
+/* active: when you click on it, it turns green */
+a:active{
+  color:green;
+}
+
+/* a:visited{
+  color:black;
+} */
+
+/* applying a percent to the width makes it scale when the window size changes */
+.container{
+  width:80%;
+  margin:auto;
+}
+
+.button {
+  background-color:#333;
+  color:#fff;
+  padding:10px 15px;
+  border:none;
+}
+
+.button:hover{
+  background:red;
+  color:#fff;
+}
+
+.clr{
+  clear:both;
+}
+
+/* use a dot to target a class */
+.box-1{
+  background-color:#333;
+  color:#fff;
+
+  border-right:5px red solid;
+  border-left:5px red solid;
+  border-top:5px red solid;
+  border-bottom:5px red solid;
+
+  /* or just border:5px red solid; */
+  border-width:3px;
+  border-bottom-width:10px;
+  border-top-style:dotted;
+
+  /* putting this at the end should override everything */
+  border:5px red solid;
+
+  /* you can also do these in different directions */
+  padding:20px;
+
+  margin-top:20px;
+  margin:20px 0;
+}
+
+/* box model: from inner to outer: content, padding, border, margin */
+/* when indicating margins on same line: remember this order: top right bottom left
+if the top and bottom are the same, and left and right are the same, then the values only have to be inserted once (top/bottom) (left/right); if all margins are equal then just insert that value */
+
+/* targets h1 within box-1 */
+.box-1 h1 {
+  font-family:Tahoma;
+  font-weight:800;
+  font-style:italic;
+  text-decoration:underline;
+  text-transform:uppercase;
+  letter-spacing: 0.2em;
+  word-spacing: 1em;
+}
+
+.box-2{
+  border:3px dotted #ccc;
+  padding:20px;
+  margin:20px 0;
+}
+
+.categories{
+  border:1px #ccc solid;
+  padding:10px;
+  /* for rounded corners */
+  border-radius:15px;
+}
+
+.categories h2{
+  text-align:center;
+}
+
+.categories ul{
+  padding:0;
+  padding-left:60px;
+  list-style:square;
+  list-style:none;
+}
+
+.categories li{
+  padding-bottom:6px;
+  border-bottom:dotted 1px #333;
+  list-style-image: url('../images/joker.jpg');
+}
+
+.my-form{
+  padding:20px;
+}
+
+.my-form .form-group{
+  padding-bottom:15px;
+}
+
+.my-form label {
+  display:block;
+}
+
+/* brackets to put type text is to disregard the submit button, since it's of type input */
+.my-form input[type="text"], .my-form textarea {
+  padding:8px;
+  width:100%;
+}
+
+.block{
+  float:left;
+  width:33.3%;
+  border:1px solid #ccc;
+  padding:10px;
+  box-sizing:border-box;
+}
+
+#main-block {
+  float:left;
+  width:70%;
+  padding:15px;
+  box-sizing:border-box;
+}
+
+#sidebar {
+  float:right;
+  width:30%;
+  background-color:#333;
+  color:#fff;
+  padding:15px;
+  box-sizing:border-box;
+}
+
+/* Positioning in CSS:
+static (default)
+relative - relative to normal position
+absolute - allows us to target whatever position we want inside a relative element
+fixed - a fixed position to the browser window (it'll be in same position if we scroll)
+initial - sets the property to its default value
+inherit - inherit whatever the property of its parent is */
+
+.p-box{
+  width:800px;
+  height:500px;
+  border:1px solid #000;
+  margin-top:30px;
+  position:relative;
+  background-image:url('../images/bg.jpg');
+  background-repeat: no-repeat;
+  background-position:100px 200px;
+  background-position: center center;
+}
+
+/* if we don't have a relative element, it'll be 40px from the top of the entire document */
+.p-box h1{
+  position:absolute;
+  top:100px;
+  left:200px;
+}
+
+.p-box h2{
+  position:absolute;
+  bottom:40px;
+  right:100px;
+}
+
+.fix-me{
+  position:fixed;
+  top:400px;
+}
+
+.my-list li:first-child{
+  background: red;
+}
+.my-list li:last-child{
+  background: blue;
+}
+.my-list li:nth-child(5){
+  background: yellow;
+}
+.my-list li:nth-child(even){
+  background: green;
 }
