@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!-- typing html + tab gives us a default structure -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>My Blog</title>
+    <!-- metadata, Google looks at this when scanning your website -->
+    <meta name="description" content="Awesome blog by Andy Le">
+    <meta name="keywords" content="web design blog, web dev blog, Andy Le">
+    <!-- styling the header and footer -->
+    <style type="text/css">
+      #main-header {
+        text-align:center;
+        background-color:black;
+        color:white;
+        padding:10px;
+      }
+
+      #main-footer {
+        text-align:center;
+        font-size:18px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <header id="main-header">
+      <h1>My Website</h1>
+    </header>
+    <a href="index.html">Go to index</a>
+
+    <section>
+      <!-- class attribute to indicate this is a post -->
+      <article class="post">
+        <h3>Blog Post 1</h3>
+        <!-- small is usually used for subcontent -->
+        <small>Posted by Andy on October 31</small>
+        <p>This is a post.</p>
+        <a href="post.html">Read More</a>
+      </article>
+
+      <article class="post">
+        <h3>Blog Post 2</h3>
+        <small>Posted by Andy on October 31</small>
+        <p>This is another post.</p>
+        <a href="post.html">Read More</a>
+      </article>
+    </section>
+
+    <!-- sidebar stuff, well actually CSS puts them on the side -->
+    <aside>
+      <h3>Categories</h3>
+      <nav>
+        <ul>
+          <li><a href="#">Category 1</a></li>
+          <li><a href="#">Category 2</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- &copy for the copyright symbol -->
+    <footer id="main-footer">
+      <p>Copyright &copy; 2019, My Website</p>
+    </footer>
+
+    <!-- give headers and footers ids if you plan on having multiple -->
+
+  </body>
+</html>

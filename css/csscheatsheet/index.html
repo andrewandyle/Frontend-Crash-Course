@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<!--
+3 methods for adding CSS:
+Inline CSS: directly in the html element (don't do this)
+Internal CSS: Using <style> tags within a single document
+External CSS: Linking an external .css file (we'll do this)
+-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>CSS Cheat Sheet</title>
+    <style type="text/css">
+      h2 {
+        color:blue;
+      }
+    </style>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body>
+    <!-- inline CSS, this is horrible practice -->
+    <h1 style="color:red">Inline CSS</h1>
+
+    <!-- interal CSS example, look above for style -->
+    <h2>Internal CSS</h2>
+
+    <!-- external CSS example, linked to style.css -->
+    <h3>External CSS</h3>
+
+
+  </body>
+</html>

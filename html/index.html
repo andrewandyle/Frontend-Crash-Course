@@ -1,0 +1,281 @@
+<!--
+
+Homepage is always called index.html - root domain
+
+Tag Syntax:
+Element names are surrounded by brackets
+<tag>(content)</tag>
+start tag, content, end tag (with /)
+A self closing tag has no content (ex: <br />, but <br> is fine in HTML5)
+
+HTML Structure:
+<html>
+  <head>
+    <title> Page title </title>
+    (remember that the title is literally what shows in the tab)
+  </head>
+  <body>
+    (content)
+    <h1>My first heading</h1>
+    <p>My first paragraph</p>
+  </body>
+</html>
+
+<!DOCTYPE html> is a doctype, a declaration that should be the first thing on the webpage
+Tells the browser what type of html this is written in
+
+Some necessary Chrome commands:
+Ctrl-U shows you the html that's being parsed
+F12 gives you a console, elements tab shows html, you can also see JavaScript
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML Cheat Sheet</title>
+  </head>
+  <body>
+    <!--
+    Headings:
+    There are 6 headings: h1 through h6
+    h1 makes the text bigger and adds padding around edges so next content will be pushed down
+    h2 is a little smaller, then they each get smaller
+    Text size can be changed with CSS
+    -->
+    <a href="blog.html">Go to blog</a>
+    <hr>
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
+    <!--
+    Paragraphs
+    Denoted by p
+    The word lorem + tab will generate dummy text
+    Adding another paragraph will automatically put it on a new line
+    -->
+    <p>
+      This is a paragraph.
+      <!--
+      Strong: surround something and say this text should be strong (Default is bold)
+      CSS can change what defines strong
+      -->
+      <strong>This is default strong text (bold). </strong>
+      <!--
+      Emphasize: emphasizes the text (Default is italic). Can also be changed with CSS
+      -->
+      <em>This is default emphasized text (italics).</em>
+    <p>
+      <!--
+      Links: they are the a tag
+      Give it an attribute (href="" is the link that we want to navigate to)
+      Could be local or external
+      Another attribute is target="_blank", which opens up a new tab with that site
+      Usually used when you're navigating to an external site
+      -->
+      <a href="http://p5r.jp" target="_blank"> This is a link to my favorite game. Coming in the west in Spring 2020. Hope I can dodge spoilers. </a>
+      <!--
+      Attributes provide info about an element, placed within the start tag, uses key/value pairs
+      <tagname attributename="attributevalue"> content </tagname>
+      -->
+    </p>
+    <!--
+    Inline Elements: don't start on a new line, only take necessary width
+    Examples: <span>, <img>, <a>
+
+    Block Elements: start on a new line, take full width available
+    Examples: <div>, <h1> - <h6> (the headings we just did), <p> (paragraph), <form>
+    -->
+
+    <!--
+    Lists
+    Two types: unordered (ul) and ordered (ol)
+    Each list element has an li tag
+    Unordered: Adds bullets and also pads by default (pushed to the right)
+    Can style the bullets with CSS
+    Ordered: adds numbered items (1., 2., 3., etc.)
+    -->
+    <ul>
+      <li>List Item 1</li>
+      <li>List Item 2</li>
+    </ul>
+
+    <ol>
+      <li>List Item 1</li>
+      <li>List Item 2</li>
+    </ol>
+
+    <!--
+    Table
+    use the table tag
+    thead for the heading and tbody for the body
+    -->
+    <table>
+      <!--
+      tr is table row
+      each heading will have a th tag
+      -->
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Age</th>
+        </tr>
+      </thead>
+      <!--
+      td is for the table data
+      -->
+      <tbody>
+        <td>Andrew Le</td>
+        <td>andrewandyle@gmail.com</td>
+        <td>20</td>
+      </tbody>
+      <!--
+      You can get multiple rows like this
+      Can style later with CSS
+      Don't use tables for your layout
+      -->
+      <tbody>
+        <td>Jordan Gennero</td>
+        <td>confidential</td>
+        <td>20</td>
+      </tbody>
+      <tbody>
+        <td>Elijah Duquette</td>
+        <td>confidential</td>
+        <td>20</td>
+      </tbody>
+    </table>
+
+    <!-- just adding a line breaker -->
+    <br>
+    <!-- gives a horizontal line -->
+    <hr>
+    <br>
+
+    <!--
+    Forms
+    No functionality with just html - only covering look
+    Using the form tag
+    action attribute submits form to a certain page
+    method attribute - usually post, making a post request to the server (like adding data to a database)
+    There's also get requests
+    -->
+    <form class="" action="process.php" method="post">
+      <!--
+      Labels (label) and Inputs (input)
+      Input has an attribute called type (usually text input), name has to do with server-side programming
+      name is how we would grab the value of this form
+      Labels and inputs are inline, so by default they'd stay on the same line
+      Wrap them in a div (block level elements) to put them on the next line
+      Later: also add placeholder attribute for initial text (Ex: Enter first name)
+      -->
+      <div>
+        <label> First Name </label>
+        <input type="text" name="firstName", placeholder="Enter first name">
+      </div>
+      <br>
+      <div>
+        <label> Last Name </label>
+        <input type="text" name="lastName">
+      </div>
+      <br>
+      <!-- Can use type="email" to add some validation -->
+      <div>
+        <label> Email </label>
+        <input type="email" name="email">
+      </div>
+      <br>
+      <!-- Can use textarea tag instead of an input tag -->
+      <div>
+        <label> Message </label>
+        <textarea name="message"></textarea>
+      </div>
+      <br>
+      <!--
+      Can use a select tag for multiple options (using option tags)
+      Add the text to be displayed in the option in the content
+      -->
+      <div>
+        <label> Gender </label>
+        <select name="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other...?</option>
+        </select>
+      </div>
+      <br>
+      <!--
+      Can use type number, and add a predefined value (attribute) to input
+      Gives arrows so number can go up or down
+      -->
+      <div>
+        <label>Age</label>
+        <input type="number" name="age" value="30">
+      </div>
+      <br>
+      <!-- can also use type date for a date selector -->
+      <div>
+        <label>Birthday</label>
+        <input type="date" name="birthday">
+      </div>
+      <br>
+      <!-- add a submit button at the very end -->
+      <input type="submit" name="submit" value="Submit">
+    </form>
+
+    <!--
+    Buttons - using the button tag
+    In order for a button to do something, you need JS
+    click attribute adds an event, but you can't add functionality with just html
+    -->
+    <button>Click to do nothing.</button>
+
+    <br>
+    <!--
+    Images - using the img tag - they're inline
+    It's a self closing tag
+    src attribute - set to name of image
+    Put image in the same directory as html file
+    If you put it in a subdirectory, you have to change subdirectory
+    Ex: if it's in a folder named images, use images/joker.jpg
+    alt attribute - if it can't find image, it'll display this text as an alternative
+    Can also use width and height, but CSS can do this too
+
+    You can wrap a link around the image as well
+    If you put the image itself, then clicking it will open the image
+    -->
+    <a href="images/joker.jpg">
+      <img src="images/joker.jpg" alt="My Sample Image" width="200">
+    </a>
+
+    <!--
+    Quotations
+    Three different tags:
+    blockquote - takes in an attribute called cite (where the quote comes from)
+    abbr - abbreviation - wrap text in an abbr tag, give it a title attribute for the abbreviation itself
+    cite - italicizes the text, lets browser know that it's something being cited
+    -->
+
+    <blockquote cite="https://p5r.jp/">
+      Let's do it! DO IT! RAVAGE THEM!
+    </blockquote>
+
+    <p>Please don't spoil <abbr title="Persona 5 Royal">P5R</abbr> for me.</p>
+
+    <p>This website was made using the <cite>HTML Crash Course</cite> by Brad Traversy.</p>
+
+    <!--
+    HTML5 Semantic Tags - clearly describes its meaning to both browser and developer
+    header, footer, aside, main, article, nav, section, details
+    -->
+
+    <!--
+    div with style attribute
+    margin top of 500 pixels - makes it to where there's more room to scroll
+    -->
+    <div style="margin-top:500px"></div>
+  </body>
+</html>
