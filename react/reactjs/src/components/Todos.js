@@ -3,6 +3,10 @@ import TodoItem from './TodoItem';
 import PropTypes from 'prop-types';
 
 class Todos extends Component {
+  markComplete = () => {
+    console.log('Hello')
+  }
+
   render() {
     /* console.log(this.props.todos)
     this is our array that comes from the state of the App.js
@@ -10,7 +14,9 @@ class Todos extends Component {
     return this.props.todos.map((todo) => (
       /* for each todo that we map through, what jsx do we want to display?
       <h3>{ todo.title }</h3> - if we want to simply print the title of each todo */
-      <TodoItem key={todo.id} todo={todo} />
+      <TodoItem key={todo.id} todo={todo}
+      markComplete={this.props.markComplete}
+      delTodo={this.props.delTodo} />
 
     ));
   }
@@ -19,7 +25,9 @@ class Todos extends Component {
 /* Define prop types here
 Prop types - validation for properties that a component should have - we can set the type and set them to be required or not */
 Todos.propTypes = {
-  todos: PropTypes.array.isRequired
+  todos: PropTypes.array.isRequired,
+  markComplete: PropTypes.func.isRequired,
+  delTodo: PropTypes.func.isRequired,
 }
 
 export default Todos;
