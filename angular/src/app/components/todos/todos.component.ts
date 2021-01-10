@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Todo } from '../../models/Todo'
+import { TodoService } from '../../services/todo.service'
 
 @Component({
   selector: 'app-todos',
@@ -12,26 +13,27 @@ export class TodosComponent implements OnInit {
   todos:Todo[] = []
 
   // used to import services
-  constructor() { }
+  constructor(private todoService:TodoService) { }
 
   // componentDidMount
-  // left off at 34:15 on video
+  // cannot directly assign to this.todos because it's asynchronous
   ngOnInit(): void {
-    this.todos = [{
-      id: 1,
-      title: 'Todo One',
-      completed: false,
-    },
-    {
-      id: 2,
-      title: 'Todo Two',
-      completed: false,
-    },
-    {
-      id: 3,
-      title: 'Todo Three',
-      completed: true,
-    }]
+    this.todoService.getTodos().subscribe(todos => {
+      this.todos = todos
+    })
   }
 
+  // emitted from a todo-item component
+  deleteTodo(todo:Todo) {
+    // remove from UI
+    this.todos = this.todos.filter(t => t.id !== todo.id)
+    // remove from server
+    this.todoService.deleteTodo(todo).subscribe()
+  }
+
+  addTodo(todo:Todo) {
+    this.todoService.addTodo(todo).subscribe(todo => {
+      this.todos.push(todo)
+    })
+  }
 }

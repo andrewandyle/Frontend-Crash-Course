@@ -1,0 +1,9 @@
+<!-- ngClass is for conditionally changing classes of a component -->
+<div [ngClass]="setClasses()">
+  <p>
+    <!-- add events with parantheses -->
+    <input (change)="onToggle(todo)" type="checkbox" />
+    {{ todo.title }}
+    <button (click)="onDelete(todo)" class="del">x</button>
+  </p>
+</div>

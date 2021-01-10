@@ -1,3 +1,8 @@
-<ul *ngFor="let todo of todos">
-  <li>{{ todo.title }}</li>
-</ul>
+<app-add-todo (addTodo)="addTodo($event)"></app-add-todo>
+<!-- ngFor is to perform a loop, [todo] is to pass in the iteration -->
+<app-todo-item
+  *ngFor="let todo of todos"
+  [todo]="todo"
+  (deleteTodo)="deleteTodo($event)"
+>
+</app-todo-item>
