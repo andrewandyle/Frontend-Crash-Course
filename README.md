@@ -18,12 +18,12 @@ For Absolute Beginners: https://www.youtube.com/watch?v=hdI2bqOjy3c
 
 Async JS (Callbacks, Promises, Async Await): https://www.youtube.com/watch?v=PoRJizFvM7s
 
-# React
+## React
 
 2019 Crash Course: https://www.youtube.com/watch?v=sBws8MSXN7A
 
 Redux Crash Course with React: https://www.youtube.com/watch?v=93p3LxR9xfM
 
-# Angular
+## Angular
 
 Angular Crash Course: https://www.youtube.com/watch?v=Fdf5aTYRW0E
