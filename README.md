@@ -18,6 +18,8 @@ For Absolute Beginners: https://www.youtube.com/watch?v=hdI2bqOjy3c
 
 Async JS (Callbacks, Promises, Async Await): https://www.youtube.com/watch?v=PoRJizFvM7s
 
+Fetch API Introduction: https://www.youtube.com/watch?v=Oive66jrwBs
+
 ## React
 
 2019 Crash Course: https://www.youtube.com/watch?v=sBws8MSXN7A
